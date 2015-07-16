@@ -1,0 +1,47 @@
+#!/bin/sh
+#
+# fluxbox startup-script:
+#
+# Lines starting with a '#' are ignored.
+
+# Change your keymap:
+# setxkbmap -layout latam
+
+# Applications you want to run with fluxbox.
+# MAKE SURE THAT APPS THAT KEEP RUNNING HAVE AN ''&'' AT THE END.
+#
+# unclutter -idle 2 &
+# wmnd &
+# wmsmixer -w &
+# idesk &
+
+# Enable vertical scrolling
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 1
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 2
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Timeout" 200
+
+# Enable horizontal scrolling
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 5
+
+# Enable middle button emulation
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Middle Button Emulation" 1
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Middle Button Timeout" 50
+
+# Enable horizontal scrolling for touchpad
+xinput set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Two-Finger Scrolling" 1 1
+
+# Enable palm detection
+xinput set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Palm Detection" 1
+
+# Make CapsLock a Control key
+setxkbmap -option ctrl:nocaps
+
+# Guake
+guake -e "dvtm-status -m ^a" &
+
+# And last but not least we start fluxbox.
+# Because it is the last app you have to run it with ''exec'' before it.
+
+exec fluxbox
+# or if you want to keep a log:
+# exec fluxbox -log "/home/chris/.fluxbox/log"
