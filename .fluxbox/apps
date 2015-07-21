@@ -17,5 +17,6 @@
   [Maximized]	{yes}
 [end]
 [app] (name=emacs) (class=Emacs)
-  [Maximized]	{yes}
+  [Maximized]   {yes}
+  [Deco]        {NONE}
 [end]

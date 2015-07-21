@@ -60,7 +60,7 @@ Mod4 8 :Tab 8
 Mod4 9 :Tab 9
 
 # open a terminal
-Mod1 F1 :Exec lxterminal
+Mod1 F1 :Exec gnome-terminal
 
 # open a dialog to run programs
 Mod1 F2 :Exec fbrun -font ubuntu -bg white
@@ -165,7 +165,7 @@ Mod4 e :Exec subl3
 
 Mod4 w :Exec google-chrome-stable
 
-Mod4 t :Exec lxterminal
+Mod4 t :Exec gnome-terminal
 
 Mod4 l :Exec slimlock &
 XF86ScreenSaver :Exec slimlock &

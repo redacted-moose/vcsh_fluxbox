@@ -5,7 +5,8 @@
 # Lines starting with a '#' are ignored.
 
 # Change your keymap:
-# setxkbmap -layout latam
+# Make CapsLock a Control key
+setxkbmap -option ctrl:nocaps
 
 # Applications you want to run with fluxbox.
 # MAKE SURE THAT APPS THAT KEEP RUNNING HAVE AN ''&'' AT THE END.
@@ -33,11 +34,8 @@ xinput set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Two-Finger Scrolling" 1 
 # Enable palm detection
 xinput set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Palm Detection" 1
 
-# Make CapsLock a Control key
-setxkbmap -option ctrl:nocaps
-
 # Guake
-guake -e "dvtm-status -m ^a" &
+guake -e "TERM=xterm-256color dvtm-status -m ^a" &
 
 # And last but not least we start fluxbox.
 # Because it is the last app you have to run it with ''exec'' before it.
