@@ -1,10 +1,8 @@
 *
 !/.fluxbox
 !/.fluxbox/apps
-!/.fluxbox/fbrun_history
 !/.fluxbox/init
 !/.fluxbox/keys
-!/.fluxbox/menu
 !/.fluxbox/overlay
 !/.fluxbox/slitlist
 !/.fluxbox/startup

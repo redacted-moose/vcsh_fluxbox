@@ -45,7 +45,7 @@ session.screen0.strftimeFormat:	%l:%M %p %a, %e %b %Y
 session.screen0.workspacewarping:	true
 session.screen0.focusNewWindows:	true
 session.screen0.allowRemoteActions:	false
-session.screen0.defaultDeco:	NORMAL
+session.screen0.defaultDeco:	NONE
 session.screen0.showwindowposition:	false
 session.screen0.windowMenu:	~/.fluxbox/windowmenu
 session.screen0.menuDelay:	200

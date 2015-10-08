@@ -35,7 +35,7 @@ xinput set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Two-Finger Scrolling" 1 
 xinput set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Palm Detection" 1
 
 # Guake
-guake -e "TERM=xterm-256color dvtm-status -m ^a" &
+guake -e "env TERM=xterm-256color dvtm-status -m ^a" &
 
 # And last but not least we start fluxbox.
 # Because it is the last app you have to run it with ''exec'' before it.

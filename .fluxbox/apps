@@ -17,6 +17,8 @@
   [Maximized]	{yes}
 [end]
 [app] (name=emacs) (class=Emacs)
-  [Maximized]   {yes}
-  [Deco]        {NONE}
+  [Maximized]	{yes}
+[end]
+[app] (name=urxvtq) (class=URxvt)
+  [Fullscreen]	{no}
 [end]

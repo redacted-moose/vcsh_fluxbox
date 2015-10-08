@@ -42,7 +42,8 @@ OnTitlebar Mouse3 :WindowMenu
 Mod1 Tab :NextWindow {groups} (workspace=[current])
 Mod1 Shift Tab :PrevWindow {groups} (workspace=[current])
 
-Mod1 grave :exec dswitcher -b -i -sb '#05A100'
+# Mod1 grave :exec dswitcher -b -i -sb '#05A100'
+Mod1 grave :exec rofi -show window
 
 # cycle through tabs in the current window
 Mod4 Tab :NextTab
@@ -60,10 +61,10 @@ Mod4 8 :Tab 8
 Mod4 9 :Tab 9
 
 # open a terminal
-Mod1 F1 :Exec gnome-terminal
+Mod1 F1 :Exec urxvtc-launch
 
 # open a dialog to run programs
-Mod1 F2 :Exec fbrun -font ubuntu -bg white
+Mod1 F2 :Exec fbrun -font terminus -fg white -bg black
 
 # volume settings, using common keycodes
 # if these don't work, use xev to find out your real keycodes
@@ -157,15 +158,18 @@ Mod4 r :RootMenu
 # dmenu
 #Mod4 m :exec dmenu_run -b -i -sb '#05A100'
 #Mod4 m :exec xboomx "-b -i -sb '#05A100'"
-Mod4 m :Exec xboomx
+# Mod4 m :Exec xboomx
+Mod4 m :Exec rofi -show run -fuzzy
 
 Mod4 f :Exec thunar
 
 Mod4 e :Exec subl3
 
-Mod4 w :Exec google-chrome-stable
+# Mod4 w :Exec google-chrome-stable
 
-Mod4 t :Exec gnome-terminal
+#Mod4 t :Exec gnome-terminal
+Mod4 t :Exec urxvtc-launch
+Ctrl Mod4 t :Exec urxvtq #{If {Matches (urxvtq) And (Fullscreen!=yes)} {Fullscreen}}
 
 Mod4 l :Exec slimlock &
 XF86ScreenSaver :Exec slimlock &
@@ -183,3 +187,17 @@ Shift Mod4 Right :SendToNextHead
 XF86Sleep :Exec systemctl suspend & slimlock
 
 Mod4 z :ToggleDecor
+
+## ResizeMode (Window, Resize) - when Mod4 w Mod4 r is pressed, all keys except the arrow keys are disabled.  Press escape to exit this mode.
+Mod4 w Mod4 r               :KeyMode ResizeMode
+ResizeMode: None k          :ResizeVertical -2
+ResizeMode: None j          :ResizeVertical +2
+ResizeMode: None h          :ResizeHorizontal -2
+ResizeMode: None l          :ResizeHorizontal +2
+
+## MoveMode (Window, Move) - when Mod4 w Mod4 m is pressed, all keys except the arrow keys are disabled.  Press escape to exit this mode.
+Mod4 w Mod4 m               :KeyMode MoveMode
+MoveMode: None k            :MoveUp 2
+MoveMode: None j            :MoveDown 2
+MoveMode: None h            :MoveLeft 2
+MoveMode: None l            :MoveRight 2
